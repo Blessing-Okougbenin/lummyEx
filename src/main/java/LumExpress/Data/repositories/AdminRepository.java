@@ -1,0 +1,9 @@
+package LumExpress.Data.repositories;
+
+import LumExpress.Data.Models.Admin;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface AdminRepository extends JpaRepository<Admin, Long> {
+
+}
+
