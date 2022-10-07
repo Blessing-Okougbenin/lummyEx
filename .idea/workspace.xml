@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de2ee1f-e104-46f5-a942-11a2ca2f06e4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="9de2ee1f-e104-46f5-a942-11a2ca2f06e4" name="Changes" comment="Luminaries mock project with Dj Fems">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,13 +16,18 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="JUnit5 Test Class" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JpbToolWindowState">
@@ -75,12 +75,13 @@
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.file-colors&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;eea5c1c8c72dfdad71c988d99ad5c1a9&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="LumExpress.services.notificationService" />
       <recent name="LumExpress.exceptions" />
       <recent name="LumExpress.dtos.requests" />
       <recent name="LumExpress.dtos.responses" />
@@ -96,6 +97,7 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="LumExpress.Data.repositories" />
       <recent name="LumExpress.services.cloud" />
       <recent name="LumExpress.services" />
     </key>
@@ -107,65 +109,65 @@
       <command value="mvn install" />
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.LumExpressApplication">
+  <component name="RunManager" selected="JUnit.VerificationTokenRepositoryTest.findByToken">
     <configuration name="CloudinaryCloudServiceImplTest.uploadTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lumi-Express" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="LumExpress.services.cloud.*" />
+          <option name="PATTERN" value="LumExpress.services.cloudServices.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="LumExpress.services.cloud" />
-      <option name="MAIN_CLASS_NAME" value="LumExpress.services.cloud.CloudinaryCloudServiceImplTest" />
+      <option name="MAIN_CLASS_NAME" value="LumExpress.services.cloudServices.CloudinaryCloudServiceImplTest" />
       <option name="METHOD_NAME" value="uploadTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="VerificationTokenRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lumi-Express" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="LumExpress.services.*" />
+          <option name="PATTERN" value="LumExpress.Data.repositories.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="LumExpress.services" />
-      <option name="MAIN_CLASS_NAME" value="LumExpress.services.ProductServiceImplTest" />
+      <option name="PACKAGE_NAME" value="LumExpress.Data.repositories" />
+      <option name="MAIN_CLASS_NAME" value="LumExpress.Data.repositories.VerificationTokenRepositoryTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductServiceImplTest.deleteProductTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="VerificationTokenRepositoryTest.findByToken" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lumi-Express" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="LumExpress.services.*" />
+          <option name="PATTERN" value="LumExpress.Data.repositories.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="LumExpress.services" />
-      <option name="MAIN_CLASS_NAME" value="LumExpress.services.ProductServiceImplTest" />
-      <option name="METHOD_NAME" value="deleteProductTest" />
+      <option name="PACKAGE_NAME" value="LumExpress.Data.repositories" />
+      <option name="MAIN_CLASS_NAME" value="LumExpress.Data.repositories.VerificationTokenRepositoryTest" />
+      <option name="METHOD_NAME" value="findByToken" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductServiceImplTest.getAllProductTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="VerificationTokenRepositoryTest.findByUserEmail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lumi-Express" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="LumExpress.services.*" />
+          <option name="PATTERN" value="LumExpress.Data.repositories.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="LumExpress.services" />
-      <option name="MAIN_CLASS_NAME" value="LumExpress.services.ProductServiceImplTest" />
-      <option name="METHOD_NAME" value="getAllProductTest" />
+      <option name="PACKAGE_NAME" value="LumExpress.Data.repositories" />
+      <option name="MAIN_CLASS_NAME" value="LumExpress.Data.repositories.VerificationTokenRepositoryTest" />
+      <option name="METHOD_NAME" value="findByUserEmail" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -186,11 +188,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.VerificationTokenRepositoryTest.findByToken" />
+        <item itemvalue="JUnit.VerificationTokenRepositoryTest.findByUserEmail" />
+        <item itemvalue="JUnit.VerificationTokenRepositoryTest" />
         <item itemvalue="Spring Boot.LumExpressApplication" />
         <item itemvalue="JUnit.CloudinaryCloudServiceImplTest.uploadTest" />
-        <item itemvalue="JUnit.ProductServiceImplTest" />
-        <item itemvalue="JUnit.ProductServiceImplTest.deleteProductTest" />
-        <item itemvalue="JUnit.ProductServiceImplTest.getAllProductTest" />
       </list>
     </recent_temporary>
   </component>
@@ -219,10 +221,25 @@
       <workItem from="1664825359417" duration="637000" />
       <workItem from="1664871205790" duration="1447000" />
       <workItem from="1664872784174" duration="8175000" />
+      <workItem from="1665077391046" duration="3411000" />
+      <workItem from="1665131010033" duration="12467000" />
+      <workItem from="1665148305254" duration="751000" />
     </task>
+    <task id="LOCAL-00001" summary="Luminaries mock project with Dj Fems">
+      <created>1665148267420</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1665148267420</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Luminaries mock project with Dj Fems" />
+    <option name="LAST_COMMIT_MESSAGE" value="Luminaries mock project with Dj Fems" />
   </component>
 </project>
