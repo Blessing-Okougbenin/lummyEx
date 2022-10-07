@@ -1,9 +1,7 @@
-package LumExpress.services.cloud;
+package LumExpress.services.cloudServices;
 import com.cloudinary.Cloudinary;
-import com.cloudinary.utils.ObjectUtils;
 import lombok.AllArgsConstructor;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;

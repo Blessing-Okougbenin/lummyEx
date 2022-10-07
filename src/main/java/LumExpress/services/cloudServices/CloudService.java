@@ -1,6 +1,4 @@
-package LumExpress.services.cloud;
-
-import com.cloudinary.Cloudinary;
+package LumExpress.services.cloudServices;
 
 import java.io.IOException;
 import java.util.Map;

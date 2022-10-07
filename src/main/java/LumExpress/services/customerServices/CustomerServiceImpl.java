@@ -1,4 +1,4 @@
-package LumExpress.services;
+package LumExpress.services.customerServices;
 
 import LumExpress.Data.Models.Address;
 import LumExpress.Data.Models.Cart;
@@ -6,7 +6,7 @@ import LumExpress.Data.Models.Customer;
 import LumExpress.Data.repositories.CustomerRepository;
 import LumExpress.dtos.requests.CustomerRegistrationRequest;
 import LumExpress.dtos.responses.CustomerRegistrationResponse;
-import com.cloudinary.Cloudinary;
+import LumExpress.services.customerServices.CustomerService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;

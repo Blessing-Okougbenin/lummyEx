@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Seller  extends LumiExpressUser  {
+public class Vendor extends LumiExpressUser  {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

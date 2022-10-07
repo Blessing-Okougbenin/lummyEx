@@ -1,4 +1,4 @@
-package LumExpress.services;
+package LumExpress.services.productServices;
 
 import LumExpress.Data.Models.Product;
 import LumExpress.dtos.requests.AddProductRequest;

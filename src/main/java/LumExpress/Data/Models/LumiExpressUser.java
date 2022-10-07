@@ -14,6 +14,7 @@ public class LumiExpressUser {
     private String password;
     private String phoneNumber;
     private String imageUrl;
+    private boolean isEnabled;
 
 
 }

@@ -1,7 +1,6 @@
-package LumExpress.services;
+package LumExpress.services.cartService;
 
-import LumExpress.Data.Models.Cart;
-import LumExpress.Data.repositories.CartRepository;
+import LumExpress.services.cartService.CartService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package LumExpress.services.cloud;
+package LumExpress.services.cloudServices;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
