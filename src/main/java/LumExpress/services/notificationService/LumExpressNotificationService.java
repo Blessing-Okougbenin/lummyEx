@@ -2,6 +2,6 @@ package LumExpress.services.notificationService;
 
 import LumExpress.dtos.requests.NotificationRequest;
 
-public interface NotificationService {
+public interface LumExpressNotificationService {
     String send(NotificationRequest notificationRequest);
 }

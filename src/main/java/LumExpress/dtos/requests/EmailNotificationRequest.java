@@ -1,15 +1,13 @@
-package LumExpress.services.notificationService;
+package LumExpress.dtos.requests;
 
 import lombok.*;
-import org.springframework.stereotype.Service;
 
 @Builder
 @Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class EmailDetails {
-
+public class EmailNotificationRequest {
     private String userEmail;
     private String mailContent;
 }

@@ -1,6 +1,6 @@
 package LumExpress.Data.repositories;
 import LumExpress.Data.Models.VerificationToken;
-import LumExpress.exceptions.VerificationTokenexception;
+import LumExpress.exceptions.VerificationTokenException;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -30,7 +30,7 @@ class VerificationTokenRepositoryTest {
         verificationTokenRepository.save(verificationToken);
         VerificationToken foundToken =
                 verificationTokenRepository.findByUserEmail("test@gmail.com")
-                        .orElseThrow(()-> new VerificationTokenexception("token not found"));
+                        .orElseThrow(()-> new VerificationTokenException("token not found"));
 
         log.info("found token --> {}", foundToken);
         assertThat(foundToken).isNotNull();
@@ -41,7 +41,7 @@ class VerificationTokenRepositoryTest {
     void findByToken() {
         verificationTokenRepository.save(verificationToken);
         VerificationToken token = verificationTokenRepository.findByToken(verificationToken.getToken()).orElseThrow(()->
-                new VerificationTokenexception("token not found"));
+                new VerificationTokenException("token not found"));
         assertThat(token).isNotNull();
         assertThat(token.getToken()).isEqualTo(verificationToken.getToken());
     }

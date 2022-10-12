@@ -13,9 +13,10 @@ import java.time.LocalDateTime;
 public class VerificationToken {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Setter(AccessLevel.PACKAGE)
     private Long id;
     private String token;
     private String userEmail;
     private LocalDateTime createdAt;
-    private  LocalDateTime expiresAt = createdAt.plusMinutes(5);
+    private  LocalDateTime expiresAt;
 }

@@ -21,7 +21,7 @@ class CustomerServiceImplTest {
     void setUp(){
       registrationRequest = CustomerRegistrationRequest
               .builder()
-              .email("blessing@gmail.com")
+              .email("pamixaj259@haboty.com")
               .password("password")
               .country("Nigeria")
               .build();
@@ -38,10 +38,7 @@ class CustomerServiceImplTest {
 
     }
 
-    @Test
-    void login(){
 
-    }
     @Test
     void completeProfile(){
 
