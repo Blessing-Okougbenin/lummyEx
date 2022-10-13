@@ -40,18 +40,19 @@ public class CustomerServiceImpl implements CustomerService {
         log.info("customer to be saved in db::{}", savedCustomer);
 
         var token = verificationServices.generateVerificationTokens(savedCustomer.getEmail());
-        emailNotificationService.sendHtmlMail(buildEmailNotificationRequest(token));
+        emailNotificationService.sendHtmlMail(buildEmailNotificationRequest(token, savedCustomer.getFirstname()));
 
         return registrationResponseBuilder(savedCustomer);
 
     }
 
-    private EmailNotificationRequest buildEmailNotificationRequest(VerificationToken verificationToken) {
-        var email=   getEmailTemplate();
+    private EmailNotificationRequest buildEmailNotificationRequest(VerificationToken verificationToken, String customerName ) {
+        var message=   getEmailTemplate();
         String mail = null;
-        if (email != null){
-            mail = String.format(email,verificationToken.getUserEmail(), "http://localhost:8080/" +
-                    verificationToken.getToken());
+        if (message != null){
+            var verificationUrl =  "http://localhost:8080/api/customer/verify/" + verificationToken.getToken();
+            mail = String.format(message,customerName,verificationUrl);
+            log.info("mailed url ==> {}",verificationUrl);
         }
         return EmailNotificationRequest.builder()
                                 .userEmail(verificationToken.getUserEmail())
