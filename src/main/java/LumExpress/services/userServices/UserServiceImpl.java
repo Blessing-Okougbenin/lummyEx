@@ -13,7 +13,8 @@ import java.util.Optional;
 
 @Service
 @AllArgsConstructor
-public class UserServiceImpl implements UserService{
+public class
+UserServiceImpl implements UserService{
     private final AdminRepository adminRepository;
     private final CustomerRepository customerRepository;
     private final VendorRepository vendorRepository;
