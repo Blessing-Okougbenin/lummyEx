@@ -1,4 +1,4 @@
-package LumExpress.configurations;
+package LumExpress.dtos.configurations;
 
 import com.cloudinary.Cloudinary;
 import com.cloudinary.utils.ObjectUtils;
@@ -23,8 +23,7 @@ public class ProjectConfig {
 
     @Bean
     public Cloudinary cloudinary(){
-       return new Cloudinary(
-               ObjectUtils.asMap(
+       return new Cloudinary(ObjectUtils.asMap(
                        "cloud_name", Cloud_name,
                        "api_key",Cloud_key,
                        "api_secret",Cloud_Secret,

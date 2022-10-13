@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de2ee1f-e104-46f5-a942-11a2ca2f06e4" name="Changes" comment="">
+    <list default="true" id="9de2ee1f-e104-46f5-a942-11a2ca2f06e4" name="Changes" comment="Luminaries mock project with Dj Fems">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LumExpress/configurations/ProjectConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LumExpress/dtos/configurations/ProjectConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LumExpress/services/customerServices/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LumExpress/services/customerServices/CustomerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LumExpress/services/userServices/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LumExpress/services/userServices/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,7 +230,8 @@
       <workItem from="1665131010033" duration="12467000" />
       <workItem from="1665148305254" duration="7365000" />
       <workItem from="1665397003986" duration="12213000" />
-      <workItem from="1665483127191" duration="20466000" />
+      <workItem from="1665483127191" duration="25215000" />
+      <workItem from="1665649862209" duration="2277000" />
     </task>
     <task id="LOCAL-00001" summary="Luminaries mock project with Dj Fems">
       <created>1665148267420</created>
@@ -257,7 +261,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665581320650</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Luminaries mock project with Dj Fems">
+      <created>1665581619956</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1665581619956</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
