@@ -9,4 +9,8 @@ public class LumExpressUtils {
         return String.valueOf(token);
     }
 
+    public static String getMockCloudinaryImageUrl(){
+        return "https://cloudinary.com/abcd";
+    }
+
 }

@@ -14,11 +14,11 @@ import javax.persistence.*;
 public class Address {
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
-        private Long id;
+        private Long addressId;
         private String street;
         private int buildingNumber;
-        private int city;
-        private int state;
+        private String city;
+        private String state;
         private String country;
 
 }

@@ -39,7 +39,6 @@ class ProductServiceImplTest {
     @Autowired
     private ProductService productService;
     AddProductRequest addProductRequest;
-
     AddProductResponse addProductResponse;
 
 

@@ -7,7 +7,9 @@ import LumExpress.Data.Models.VerificationToken;
 import LumExpress.Data.repositories.CustomerRepository;
 import LumExpress.dtos.requests.CustomerRegistrationRequest;
 import LumExpress.dtos.requests.EmailNotificationRequest;
+import LumExpress.dtos.requests.UpdateCustomerDetails;
 import LumExpress.dtos.responses.CustomerRegistrationResponse;
+import LumExpress.exceptions.UserNotFoundException;
 import LumExpress.services.notificationService.EmailNotificationService;
 import LumExpress.services.verificationServices.VerificationServices;
 import lombok.AllArgsConstructor;
@@ -17,6 +19,8 @@ import org.springframework.stereotype.Service;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
@@ -30,7 +34,6 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public CustomerRegistrationResponse register(CustomerRegistrationRequest registrationRequest) {
-
         Customer customer = mapper.map(registrationRequest, Customer.class);
         customer.setCart(new Cart());
         Address customerAddress = new Address();
@@ -45,6 +48,7 @@ public class CustomerServiceImpl implements CustomerService {
         return registrationResponseBuilder(savedCustomer);
 
     }
+
 
     private EmailNotificationRequest buildEmailNotificationRequest(VerificationToken verificationToken, String customerName ) {
         var message=   getEmailTemplate();
@@ -78,7 +82,6 @@ public class CustomerServiceImpl implements CustomerService {
         customer.getAddresses().add(customerAddress);
     }
     private static  CustomerRegistrationResponse registrationResponseBuilder(Customer customer){
-
         return CustomerRegistrationResponse.builder()
                                     .message("Successfull!")
                                     .id(customer.getId())
@@ -86,4 +89,34 @@ public class CustomerServiceImpl implements CustomerService {
                                     .build();
 
     }
+
+    @Override
+    public String completeCustomerProfile(UpdateCustomerDetails updateCustomerDetails) {
+       Customer foundCustomerToUpdate =  customerRepository.findById(updateCustomerDetails.getCustomerId())
+               .orElseThrow(()-> new UserNotFoundException(String.format(
+                       "customer with id %d, not found",updateCustomerDetails.getCustomerId())));
+        log.info("before update ==>, {}", foundCustomerToUpdate);
+       mapper.map(updateCustomerDetails,foundCustomerToUpdate);
+
+       Set<Address> customerAddressList = foundCustomerToUpdate.getAddresses();
+       Optional<Address> foundAddress = customerAddressList.stream().findFirst();
+
+       if (foundAddress.isPresent()){
+           applyAddressMapping(foundAddress.get(),updateCustomerDetails);
+       }
+       foundCustomerToUpdate.getAddresses().add(foundAddress.get());
+
+       Customer updatedCustomer = customerRepository.save(foundCustomerToUpdate);
+       log.info("updated customer==> {}", updatedCustomer);
+        return String.format("%s, your details have been updated successfully", foundCustomerToUpdate.getFirstname());
+    }
+
+    private void applyAddressMapping(Address foundAddress, UpdateCustomerDetails updateCustomerDetails) {
+        foundAddress.setState(updateCustomerDetails.getState());
+        foundAddress.setCity(updateCustomerDetails.getCity());
+        foundAddress.setBuildingNumber(updateCustomerDetails.getBuildingNumber());
+        foundAddress.setStreet(updateCustomerDetails.getStreet());
+
+    }
+
 }
