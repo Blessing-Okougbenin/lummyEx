@@ -110,6 +110,11 @@ public class CustomerServiceImpl implements CustomerService {
         return String.format("%s, your details have been updated successfully", foundCustomerToUpdate.getFirstname());
     }
 
+    @Override
+    public List<Customer> getAllCustomers() {
+        return customerRepository.findAll();
+    }
+
     private void applyAddressMapping(Address foundAddress, UpdateCustomerDetails updateCustomerDetails) {
         foundAddress.setState(updateCustomerDetails.getState());
         foundAddress.setCity(updateCustomerDetails.getCity());

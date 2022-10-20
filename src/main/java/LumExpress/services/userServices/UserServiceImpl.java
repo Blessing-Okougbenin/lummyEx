@@ -6,6 +6,7 @@ import LumExpress.Data.repositories.CustomerRepository;
 import LumExpress.Data.repositories.VendorRepository;
 import LumExpress.dtos.requests.LoginRequest;
 import LumExpress.dtos.responses.LoginResponse;
+import LumExpress.exceptions.UserNotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -34,6 +35,20 @@ UserServiceImpl implements UserService{
                              .code(400)
                              .message("Invalid Login!!!")
                              .build();
+    }
+
+    @Override
+    public LumiExpressUser getUsername(String email) {
+        var foundAdmin = adminRepository.findByEmail(email);
+        if(foundAdmin.isPresent()) return foundAdmin.get();
+
+        var foundCustomer = customerRepository.findByEmail(email);
+        if(foundCustomer.isPresent()) return foundCustomer.get();
+
+        var foundVendor = vendorRepository.findByEmail(email);
+        if(foundVendor.isPresent()) return foundVendor.get();
+
+        throw new UserNotFoundException("User does not exist");
     }
 
     private LoginResponse buildSuccessfulLoginResponse(LumiExpressUser user) {

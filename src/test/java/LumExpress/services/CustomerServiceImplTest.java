@@ -67,6 +67,11 @@ class CustomerServiceImplTest {
         assertThat(updatedCustomer).isNotNull();
         assertThat(updatedCustomer.contains("success")).isTrue();
     }
+    @Test
+    void getAllCustomers(){
+        var foundCustomers = customerService.getAllCustomers();
+        log.info("found customers :: {}", foundCustomers);
+    }
 
 
 
