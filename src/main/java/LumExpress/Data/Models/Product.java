@@ -28,7 +28,7 @@ public class Product {
     private Long id;
     private String name;
     private String description;
-    private BigDecimal price;
+    private BigDecimal price = BigDecimal.ZERO;
     private int quantity;
     @ElementCollection(fetch = FetchType.EAGER)
     private List<Category> categories = new ArrayList<>();

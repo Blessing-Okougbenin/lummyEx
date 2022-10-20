@@ -1,9 +1,6 @@
 package LumExpress.services.customerServices;
 
-import LumExpress.Data.Models.Address;
-import LumExpress.Data.Models.Cart;
-import LumExpress.Data.Models.Customer;
-import LumExpress.Data.Models.VerificationToken;
+import LumExpress.Data.Models.*;
 import LumExpress.Data.repositories.CustomerRepository;
 import LumExpress.dtos.requests.CustomerRegistrationRequest;
 import LumExpress.dtos.requests.EmailNotificationRequest;
@@ -19,6 +16,8 @@ import org.springframework.stereotype.Service;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -55,8 +54,8 @@ public class CustomerServiceImpl implements CustomerService {
         String mail = null;
         if (message != null){
             var verificationUrl =  "http://localhost:8080/api/customer/verify/" + verificationToken.getToken();
-            mail = String.format(message,customerName,verificationUrl);
-            log.info("mailed url ==> {}",verificationUrl);
+            mail = String.format(message,customerName,verificationUrl, verificationToken.getToken());
+            log.info("mailed url ==> {}",verificationToken.getToken());
         }
         return EmailNotificationRequest.builder()
                                 .userEmail(verificationToken.getUserEmail())

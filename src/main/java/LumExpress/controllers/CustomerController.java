@@ -16,15 +16,16 @@ import javax.validation.Valid;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/api/v1/customer")
+@RequestMapping("/api/v1/customer/")
 public class CustomerController {
     private final CustomerService customerService;
 
 @PostMapping()
-public ResponseEntity<?> register( @RequestBody @Valid CustomerRegistrationRequest customerRegistrationRequest){
+public ResponseEntity<?> register
+        (@RequestBody @Valid CustomerRegistrationRequest customerRegistrationRequest){
 
     return ResponseEntity.status(HttpStatus.CREATED)
-            .body(customerService.register(customerRegistrationRequest));
+                            .body(customerService.register(customerRegistrationRequest));
 }
 
 }

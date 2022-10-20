@@ -87,9 +87,11 @@ class ProductServiceImplTest {
     void getAllProductTest() {
         var getItemsRequest = buildGetItemsRequest();
         Page<Product> productPage = productService.getAllProduct(getItemsRequest);
-        log.info("page contents:: {}", productPage);
+        log.info("page contents:: {}, {}", productPage.getTotalPages(),productPage.getTotalElements());
         assertThat(productPage).isNotNull();
         assertThat(productPage.getTotalElements()).isGreaterThan(0);
+        assertThat(productPage.getTotalPages()).isEqualTo(1);
+
 
     }
     private GetAllItemsRequest buildGetItemsRequest() {

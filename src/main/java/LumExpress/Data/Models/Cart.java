@@ -21,7 +21,7 @@ public class Cart {
     @Column(name = "id")
     private Long id;
     @OneToMany(fetch = FetchType.EAGER)
-    @Cascade(org.hibernate.annotations.CascadeType.PERSIST)
+    @Cascade(org.hibernate.annotations.CascadeType.ALL)
     private List<Items> items = new ArrayList<>();
-    private BigDecimal subTotal;
+    private BigDecimal subTotal = BigDecimal.ZERO;
 }

@@ -12,8 +12,6 @@ import javax.mail.internet.MimeMessage;
 @Service
 @AllArgsConstructor
 public class EmailNotificationServiceImpl implements EmailNotificationService {
-
-
     private final JavaMailSender javaMailSender;
     @Override
     public String sendHtmlMail(EmailNotificationRequest emailDetails) {

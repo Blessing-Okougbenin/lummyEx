@@ -5,5 +5,5 @@ we charge you to shop for the harmony,
 happiness, and prosperity of your existence, with heart and soul.
 Please click the link below to activate your account.
 <br/>
-<a href="%s">Activate</a>
+<a href="%s">%s: Activate</a>
 </p>

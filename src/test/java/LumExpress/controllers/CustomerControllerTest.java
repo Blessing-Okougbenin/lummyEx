@@ -31,8 +31,8 @@ class CustomerControllerTest {
     void setUp() {
 //        mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
         registrationRequest = CustomerRegistrationRequest.builder()
-                                        .email("John@gmail.com")
-                                        .password("johnny400")
+                                        .email("blessingokougbenin879@gmail.com")
+                                        .password("password")
                                         .country("Naija")
                                         .build();
     }
@@ -40,7 +40,7 @@ class CustomerControllerTest {
     @Test
     void registerControllerTest() throws Exception {
         ObjectMapper mapper = new ObjectMapper();
-        mockMvc.perform(MockMvcRequestBuilders.post("/api/v1/customer")
+        mockMvc.perform(MockMvcRequestBuilders.post("/api/v1/customer/")
                 .contentType("application/json")
                 .content(mapper.writeValueAsString(registrationRequest)))
                 .andExpect(MockMvcResultMatchers.status().is(201))

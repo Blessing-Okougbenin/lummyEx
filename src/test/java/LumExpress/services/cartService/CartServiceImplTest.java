@@ -34,37 +34,28 @@ class CartServiceImplTest {
     @Autowired
     private ProductService productService;
 
-
     @BeforeEach
     void setUp() throws IOException {
-            Path path = Paths.get("C:\\Users\\user\\IdeaProjects\\lumi-Express\\src\\main\\resources\\images\\milk.jpg");
-            MultipartFile file = new MockMultipartFile("Peak", Files.readAllBytes(path));
-        AddProductRequest addProductRequest = buildAddProductRequest(file);
-            var product = productService.addProduct(addProductRequest);
+//        Cart cart = new Cart();
+//        cartService.saveCart(cart);
         }
 
-        private AddProductRequest buildAddProductRequest(MultipartFile file) {
-            return AddProductRequest.builder()
-                    .name("Milk")
-                    .productCategory("Beverages")
-                    .price(BigDecimal.valueOf(30.00))
-                    .quantity(10)
-                    .image(file)
-                    .build();
-        }
 
 
     @Test
     void addProductToCart() {
-
         CartRequest cartRequest = CartRequest.builder()
                 .cartId(cartService.getCartList().get(cartService.getCartList().size()-1).getId())
                 .productId(productService.getAllProduct(new GetAllItemsRequest(1,10))
                         .getContent().get(productService.getAllProduct(new GetAllItemsRequest(1,10))
                                 .getNumberOfElements()-1).getId()).build();
+        log.info("productId == {}",cartRequest.getProductId());
         log.info("cart == {}",cartRequest);
         CartResponse cartResponse = cartService.addProductToCart(cartRequest);
         log.info("added product ==> {}", cartResponse);
         assertThat(cartResponse).isNotNull();
+        assertThat(cartResponse.getCart().getSubTotal()).isGreaterThan(BigDecimal.valueOf(219.99));
+        assertThat(cartResponse.getCart().getSubTotal()).isLessThan(BigDecimal.valueOf(220.01));
+
     }
 }

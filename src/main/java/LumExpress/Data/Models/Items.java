@@ -16,7 +16,7 @@ public class Items {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @OneToOne( fetch = FetchType.EAGER)
-    @Cascade(org.hibernate.annotations.CascadeType.ALL)
+    @Cascade(org.hibernate.annotations.CascadeType.PERSIST)
     private Product product;
     private int quantity;
 
