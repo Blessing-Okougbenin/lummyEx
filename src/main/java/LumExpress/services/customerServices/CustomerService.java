@@ -10,4 +10,5 @@ public interface CustomerService {
     String completeCustomerProfile(UpdateCustomerDetails updateCustomerDetails);
 //    String updateProfile()
 
+
 }

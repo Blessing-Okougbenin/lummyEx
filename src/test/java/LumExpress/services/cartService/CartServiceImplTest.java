@@ -55,7 +55,7 @@ class CartServiceImplTest {
         log.info("added product ==> {}", cartResponse);
         assertThat(cartResponse).isNotNull();
         assertThat(cartResponse.getCart().getSubTotal()).isGreaterThan(BigDecimal.valueOf(219.99));
-        assertThat(cartResponse.getCart().getSubTotal()).isLessThan(BigDecimal.valueOf(220.01));
+        assertThat(cartResponse.getCart().getSubTotal()).isLessThan(BigDecimal.valueOf(220.00));
 
     }
 }
