@@ -11,8 +11,10 @@ import LumExpress.exceptions.ProductNotFoundException;
 import LumExpress.services.cartService.CartService;
 import LumExpress.services.customerServices.CustomerService;
 import LumExpress.services.productServices.ProductService;
+import jdk.jfr.ContentType;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -42,18 +44,18 @@ public ResponseEntity<?> register
     return ResponseEntity.ok(customerService.getAllCustomers());
 }
 
-@PostMapping("/addp")
+@PostMapping(path = "/addp", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
 public ResponseEntity<?> addProduct(
-        @RequestParam String name, @RequestParam BigDecimal price,
-        @RequestParam int quantity,@RequestParam String productCategory,
-        @RequestParam MultipartFile file ) throws IOException {
+        @RequestParam String name, @RequestParam Double price,
+        @RequestParam Integer quantity,@RequestParam String productCategory,
+        @RequestPart MultipartFile file ) throws IOException {
       AddProductRequest addProductRequest = AddProductRequest.builder()
-                                                            .name(name)
-                                                              .price(price)
+                                                              .name(name)
+                                                              .price(BigDecimal.valueOf(price))
                                                               .productCategory(productCategory)
                                                               .quantity(quantity)
                                                               .image(file).build();
-    return ResponseEntity.status(HttpStatus.CREATED)
+        return ResponseEntity.status(HttpStatus.CREATED)
             .body(productService.addProduct(addProductRequest));
 }
 
