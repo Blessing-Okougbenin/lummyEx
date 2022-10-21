@@ -1,8 +1,8 @@
 package LumExpress.exceptions;
 
-public class ProductNotFoundException extends RuntimeException {
+public class ProductNotFoundException extends LumiExpressException {
     public ProductNotFoundException(String format){
-        super();
+        super(format);
     }
 
 }

@@ -4,6 +4,7 @@ import LumExpress.Data.repositories.CustomerRepository;
 import LumExpress.dtos.requests.CustomerRegistrationRequest;
 import LumExpress.dtos.requests.UpdateCustomerDetails;
 import LumExpress.dtos.responses.CustomerRegistrationResponse;
+import LumExpress.exceptions.LumiExpressException;
 import LumExpress.services.customerServices.CustomerService;
 import LumExpress.utils.LumExpressUtils;
 import lombok.extern.slf4j.Slf4j;
@@ -26,6 +27,7 @@ class CustomerServiceImplTest {
 
     @BeforeEach
     void setUp(){
+        customerRepository.deleteAll();
       registrationRequest = CustomerRegistrationRequest
               .builder()
               .email("sleek@gmail.com")
@@ -37,7 +39,7 @@ class CustomerServiceImplTest {
 
 
     @Test
-    void register(){
+    void register() throws LumiExpressException {
         var customerRegistrationResponse = customerService.register(registrationRequest);
         assertThat(customerRegistrationResponse).isNotNull();
         assertThat(customerRegistrationResponse.getMessage()).isNotNull();
@@ -48,7 +50,7 @@ class CustomerServiceImplTest {
 
 
     @Test
-    void completeProfile(){
+    void completeProfile() throws LumiExpressException {
         CustomerRegistrationResponse customerRegistrationResponse = customerService.register(registrationRequest);
         UpdateCustomerDetails details = UpdateCustomerDetails.builder()
                 .customerId(customerRegistrationResponse.getId())

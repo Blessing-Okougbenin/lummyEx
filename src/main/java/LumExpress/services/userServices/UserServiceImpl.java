@@ -38,7 +38,7 @@ UserServiceImpl implements UserService{
     }
 
     @Override
-    public LumiExpressUser getUsername(String email) {
+    public LumiExpressUser getUsername(String email) throws UserNotFoundException {
         var foundAdmin = adminRepository.findByEmail(email);
         if(foundAdmin.isPresent()) return foundAdmin.get();
 

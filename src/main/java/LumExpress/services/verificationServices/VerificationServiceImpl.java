@@ -26,7 +26,7 @@ public class VerificationServiceImpl implements VerificationServices{
     }
 
     @Override
-    public boolean isValidVerificationToken(String token) {
+    public boolean isValidVerificationToken(String token) throws VerificationTokenException {
         VerificationToken foundToken = verificationTokenRepository.findByToken(token)
                 .orElseThrow(()-> new VerificationTokenException("token not found"));
         if (isTokenNotExpired(foundToken)) return true;

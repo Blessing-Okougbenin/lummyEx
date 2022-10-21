@@ -6,17 +6,19 @@ import LumExpress.dtos.requests.CustomerRegistrationRequest;
 import LumExpress.dtos.requests.EmailNotificationRequest;
 import LumExpress.dtos.requests.UpdateCustomerDetails;
 import LumExpress.dtos.responses.CustomerRegistrationResponse;
+import LumExpress.exceptions.LumiExpressException;
 import LumExpress.exceptions.UserNotFoundException;
 import LumExpress.services.notificationService.EmailNotificationService;
 import LumExpress.services.verificationServices.VerificationServices;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -30,14 +32,18 @@ public class CustomerServiceImpl implements CustomerService {
     private final ModelMapper mapper = new ModelMapper();
     private final EmailNotificationService emailNotificationService;
     private final VerificationServices verificationServices;
+    private final PasswordEncoder passwordEncoder;
 
     @Override
-    public CustomerRegistrationResponse register(CustomerRegistrationRequest registrationRequest) {
+    public CustomerRegistrationResponse register(CustomerRegistrationRequest registrationRequest) throws LumiExpressException {
+        Optional<Customer> foundCustomer = customerRepository.findByEmail(registrationRequest.getEmail());
+        if (foundCustomer.isPresent()) throw new LumiExpressException(
+                String.format("User with email %s already in use",registrationRequest.getEmail()));
         Customer customer = mapper.map(registrationRequest, Customer.class);
         customer.setCart(new Cart());
-        Address customerAddress = new Address();
-        customerAddress.setCountry(registrationRequest.getCountry());
-        customer.getAddresses().add(customerAddress);
+        setCustomerAddress(registrationRequest,customer);
+        String encodedPassword = passwordEncoder.encode(customer.getPassword());
+        customer.setPassword(encodedPassword);
         Customer savedCustomer = customerRepository.save(customer);
         log.info("customer to be saved in db::{}", savedCustomer);
 
@@ -45,6 +51,13 @@ public class CustomerServiceImpl implements CustomerService {
         emailNotificationService.sendHtmlMail(buildEmailNotificationRequest(token, savedCustomer.getFirstname()));
 
         return registrationResponseBuilder(savedCustomer);
+
+    }
+
+    private void setCustomerAddress(CustomerRegistrationRequest registrationRequest, Customer customer) {
+        Address customerAddress = new Address();
+        customerAddress.setCountry(registrationRequest.getCountry());
+        customer.getAddresses().add(customerAddress);
 
     }
 
@@ -75,11 +88,7 @@ public class CustomerServiceImpl implements CustomerService {
         return null;
     }
 
-    private void setCustomerAddress(CustomerRegistrationRequest customerRegistrationRequest,Customer customer){
-        Address customerAddress = new Address();
-        customerAddress.setCountry(customerRegistrationRequest.getCountry());
-        customer.getAddresses().add(customerAddress);
-    }
+
     private static  CustomerRegistrationResponse registrationResponseBuilder(Customer customer){
         return CustomerRegistrationResponse.builder()
                                     .message("Successfull!")
@@ -90,7 +99,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public String completeCustomerProfile(UpdateCustomerDetails updateCustomerDetails) {
+    public String completeCustomerProfile(UpdateCustomerDetails updateCustomerDetails) throws UserNotFoundException {
        Customer foundCustomerToUpdate =  customerRepository.findById(updateCustomerDetails.getCustomerId())
                .orElseThrow(()-> new UserNotFoundException(String.format(
                        "customer with id %d, not found",updateCustomerDetails.getCustomerId())));

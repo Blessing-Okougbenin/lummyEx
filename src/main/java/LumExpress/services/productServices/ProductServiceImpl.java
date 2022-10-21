@@ -54,7 +54,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public UpdateProductResponse update(Long productId, JsonPatch patch){
+    public UpdateProductResponse update(Long productId, JsonPatch patch) throws ProductNotFoundException {
 //        find product
         var foundProduct =
                 productRepository.findById(productId)
@@ -85,7 +85,7 @@ public class ProductServiceImpl implements ProductService {
 
 
     @Override
-    public Product getProductById(Long id) {
+    public Product getProductById(Long id) throws ProductNotFoundException {
         return  productRepository.findById(id)
                                  .orElseThrow(()-> new ProductNotFoundException(
                                          String.format("Product with id %d not found",id)));
@@ -104,7 +104,7 @@ public class ProductServiceImpl implements ProductService {
 
 
     @Override
-    public DeleteProductResponse deleteProduct(Long id) {
+    public DeleteProductResponse deleteProduct(Long id) throws ProductNotFoundException {
        var foundProduct = productRepository.findById(id)
                                                     .orElseThrow(
                                                       ()-> new ProductNotFoundException(

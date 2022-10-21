@@ -1,6 +1,6 @@
 package LumExpress.exceptions;
 
-public class VerificationTokenException extends RuntimeException {
+public class VerificationTokenException extends LumiExpressException {
     public VerificationTokenException(String message) {
         super(message);
     }

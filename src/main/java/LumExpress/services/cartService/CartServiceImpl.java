@@ -8,6 +8,7 @@ import LumExpress.Data.repositories.ProductRepository;
 import LumExpress.dtos.requests.CartRequest;
 import LumExpress.dtos.responses.CartResponse;
 import LumExpress.exceptions.CartNotFoundException;
+import LumExpress.exceptions.ProductNotFoundException;
 import LumExpress.services.cartService.CartService;
 import LumExpress.services.productServices.ProductService;
 import lombok.AllArgsConstructor;
@@ -26,7 +27,7 @@ public class CartServiceImpl implements CartService {
     private final ProductService productService;
 
     @Override
-    public CartResponse addProductToCart(CartRequest cartRequest) {
+    public CartResponse addProductToCart(CartRequest cartRequest) throws CartNotFoundException, ProductNotFoundException {
         Cart cart = cartRepository.findById(cartRequest.getCartId())
                 .orElseThrow(()-> new CartNotFoundException(
                         String.format("cart with id %d not found",cartRequest.getCartId())));
