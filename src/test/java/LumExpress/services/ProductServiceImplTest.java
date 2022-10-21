@@ -2,22 +2,19 @@ package LumExpress.services;
 
 import LumExpress.Data.Models.Product;
 import LumExpress.dtos.requests.AddProductRequest;
-import LumExpress.dtos.requests.DeleteProductRequest;
 import LumExpress.dtos.requests.GetAllItemsRequest;
 import LumExpress.dtos.requests.UpdateProductRequest;
 import LumExpress.dtos.responses.AddProductResponse;
-import LumExpress.dtos.responses.DeleteProductResponse;
 import LumExpress.dtos.responses.UpdateProductResponse;
+import LumExpress.services.productServices.ProductService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.fge.jackson.jsonpointer.JsonPointer;
 import com.github.fge.jackson.jsonpointer.JsonPointerException;
 import com.github.fge.jsonpatch.JsonPatch;
-import com.github.fge.jsonpatch.RemoveOperation;
 import com.github.fge.jsonpatch.ReplaceOperation;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,7 +39,6 @@ class ProductServiceImplTest {
     @Autowired
     private ProductService productService;
     AddProductRequest addProductRequest;
-
     AddProductResponse addProductResponse;
 
 
@@ -91,9 +87,11 @@ class ProductServiceImplTest {
     void getAllProductTest() {
         var getItemsRequest = buildGetItemsRequest();
         Page<Product> productPage = productService.getAllProduct(getItemsRequest);
-        log.info("page contents:: {}", productPage);
+        log.info("page contents:: {}, {}", productPage.getTotalPages(),productPage.getTotalElements());
         assertThat(productPage).isNotNull();
         assertThat(productPage.getTotalElements()).isGreaterThan(0);
+        assertThat(productPage.getTotalPages()).isEqualTo(1);
+
 
     }
     private GetAllItemsRequest buildGetItemsRequest() {

@@ -4,13 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de2ee1f-e104-46f5-a942-11a2ca2f06e4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="9de2ee1f-e104-46f5-a942-11a2ca2f06e4" name="Changes" comment="Luminaries mock project with Dj Fems">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LumExpress/Data/Models/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LumExpress/Data/Models/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LumExpress/Data/Models/Items.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LumExpress/Data/Models/Items.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LumExpress/Data/Models/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LumExpress/Data/Models/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LumExpress/controllers/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LumExpress/controllers/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LumExpress/services/cartService/CartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LumExpress/services/cartService/CartService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LumExpress/services/cartService/CartServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LumExpress/services/cartService/CartServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LumExpress/services/customerServices/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LumExpress/services/customerServices/CustomerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LumExpress/services/notificationService/EmailNotificationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LumExpress/services/notificationService/EmailNotificationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/welcome.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/welcome.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/LumExpress/controllers/CustomerControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LumExpress/controllers/CustomerControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/LumExpress/services/ProductServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LumExpress/services/ProductServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/LumExpress/services/cartService/CartServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LumExpress/services/cartService/CartServiceImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +38,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JpbToolWindowState">
@@ -75,7 +90,7 @@
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.file-colors&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;eea5c1c8c72dfdad71c988d99ad5c1a9&quot;
   }
 }</component>
@@ -84,6 +99,7 @@
       <recent name="LumExpress.exceptions" />
       <recent name="LumExpress.dtos.requests" />
       <recent name="LumExpress.dtos.responses" />
+      <recent name="LumExpress.services.notificationService" />
       <recent name="LumExpress.Data.Models" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -96,8 +112,11 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="LumExpress.services.cloud" />
-      <recent name="LumExpress.services" />
+      <recent name="LumExpress.services.cartService" />
+      <recent name="LumExpress.controllers" />
+      <recent name="LumExpress.Data.repositories" />
+      <recent name="LumExpress.services.userServices" />
+      <recent name="LumExpress.services.verificationServices" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -108,38 +127,38 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.LumExpressApplication">
-    <configuration name="CloudinaryCloudServiceImplTest.uploadTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CartServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lumi-Express" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="LumExpress.services.cloud.*" />
+          <option name="PATTERN" value="LumExpress.services.cartService.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="LumExpress.services.cloud" />
-      <option name="MAIN_CLASS_NAME" value="LumExpress.services.cloud.CloudinaryCloudServiceImplTest" />
-      <option name="METHOD_NAME" value="uploadTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProductServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="lumi-Express" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="LumExpress.services.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="LumExpress.services" />
-      <option name="MAIN_CLASS_NAME" value="LumExpress.services.ProductServiceImplTest" />
+      <option name="PACKAGE_NAME" value="LumExpress.services.cartService" />
+      <option name="MAIN_CLASS_NAME" value="LumExpress.services.cartService.CartServiceImplTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductServiceImplTest.deleteProductTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CartServiceImplTest.addProductToCart" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lumi-Express" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="LumExpress.services.cartService.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="LumExpress.services.cartService" />
+      <option name="MAIN_CLASS_NAME" value="LumExpress.services.cartService.CartServiceImplTest" />
+      <option name="METHOD_NAME" value="addProductToCart" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerServiceImplTest.register" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lumi-Express" />
       <extension name="coverage">
         <pattern>
@@ -148,8 +167,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="LumExpress.services" />
-      <option name="MAIN_CLASS_NAME" value="LumExpress.services.ProductServiceImplTest" />
-      <option name="METHOD_NAME" value="deleteProductTest" />
+      <option name="MAIN_CLASS_NAME" value="LumExpress.services.CustomerServiceImplTest" />
+      <option name="METHOD_NAME" value="register" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -187,10 +206,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.LumExpressApplication" />
-        <item itemvalue="JUnit.CloudinaryCloudServiceImplTest.uploadTest" />
-        <item itemvalue="JUnit.ProductServiceImplTest" />
-        <item itemvalue="JUnit.ProductServiceImplTest.deleteProductTest" />
+        <item itemvalue="JUnit.CartServiceImplTest.addProductToCart" />
         <item itemvalue="JUnit.ProductServiceImplTest.getAllProductTest" />
+        <item itemvalue="JUnit.CartServiceImplTest" />
+        <item itemvalue="JUnit.CustomerServiceImplTest.register" />
       </list>
     </recent_temporary>
   </component>
@@ -219,10 +238,108 @@
       <workItem from="1664825359417" duration="637000" />
       <workItem from="1664871205790" duration="1447000" />
       <workItem from="1664872784174" duration="8175000" />
+      <workItem from="1665077391046" duration="3411000" />
+      <workItem from="1665131010033" duration="12467000" />
+      <workItem from="1665148305254" duration="7365000" />
+      <workItem from="1665397003986" duration="12213000" />
+      <workItem from="1665483127191" duration="25215000" />
+      <workItem from="1665649862209" duration="41755000" />
+      <workItem from="1665874618759" duration="2290000" />
+      <workItem from="1665879206605" duration="862000" />
+      <workItem from="1666021712804" duration="1807000" />
+      <workItem from="1666043937503" duration="31681000" />
     </task>
+    <task id="LOCAL-00001" summary="Luminaries mock project with Dj Fems">
+      <created>1665148267420</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1665148267420</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Luminaries mock project with Dj Fems">
+      <created>1665149148691</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1665149148691</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Luminaries mock project with Dj Fems">
+      <created>1665149642553</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1665149642553</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Luminaries mock project with Dj Fems">
+      <created>1665581320650</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1665581320650</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Luminaries mock project with Dj Fems">
+      <created>1665581619956</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1665581619956</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Luminaries mock project with Dj Fems">
+      <created>1665652255609</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1665652255609</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Luminaries mock project with Dj Fems">
+      <created>1665652275061</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1665652275061</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Luminaries mock project with Dj Fems">
+      <created>1665652287874</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1665652287874</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Luminaries mock project with Dj Fems">
+      <created>1666021864450</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1666021864450</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Luminaries mock project with Dj Fems">
+      <created>1666186630869</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1666186630870</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="BEK_SORT_TYPE" value="1" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Luminaries mock project with Dj Fems" />
+    <option name="LAST_COMMIT_MESSAGE" value="Luminaries mock project with Dj Fems" />
   </component>
 </project>

@@ -1,8 +1,11 @@
 package LumExpress.Data.Models;
 
 import lombok.*;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -15,7 +18,10 @@ import java.util.List;
 public class Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Long id;
     @OneToMany(fetch = FetchType.EAGER)
-    private List<Items> items;
+    @Cascade(org.hibernate.annotations.CascadeType.ALL)
+    private List<Items> items = new ArrayList<>();
+    private BigDecimal subTotal = BigDecimal.ZERO;
 }
